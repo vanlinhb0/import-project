@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="img/logo.png">
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Nhập hàng taobao</title>
+  </head>
+  <body>
+    
+    <div class="w-full mx-auto text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+        <div class="flex md:flex-row md:justify-between px-4 mx-auto md:px-6 lg:px-8">
+            <div class="p-4 flex flex-row">
+                <img src="img/mobile.png" /> &nbsp; Hotline: <span class="px-2 text-yellow-600">0333 666 888</span> || &nbsp;Kho HN: <span class="px-2 text-yellow-600">0333 888 888</span>
+                <img class="pl-16" src="img/email.png" /> &nbsp; <span class="px-2 text-yellow-600">support@gmail.com</span>
+            </div>
+            <div class="flex flex-row">
+                <a class="p-4 text-sm font-semibold text-gray-900 hover:bg-gray-200 cursor-pointer">Đăng Nhập</a>
+                <a class="p-4 text-sm font-semibold text-gray-900 hover:bg-gray-200 cursor-pointer">Đăng Ký</a>
+            </div>
+        </div>
+        <div x-data="{ open: false }" class="flex flex-col px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="p-4 flex flex-row items-center justify-between">
+            <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Nhập Hàng Taobao</a>
+            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+            <a class="px-4 py-2 mt-2 text-sm uppercase font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Bảng giá dịch vụ</a>
+            <a class="px-4 py-2 mt-2 text-sm uppercase font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Bảng giá và chính sách ký gửi</a>
+            <a class="px-4 py-2 mt-2 text-sm uppercase font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Chia sẻ về order</a>
+            <a class="px-4 py-2 mt-2 text-sm uppercase font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Hướng dẫn hệ thống</a>
+            <a class="px-4 py-2 mt-2 text-sm uppercase font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Chính sách</a>
+            <a class="px-4 py-2 mt-2 text-sm uppercase font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Cài đặt công cụ</a>
+            </nav>
+        </div>
+
+        <div class="container mx-auto px-64">
+            <h2 class="py-8 text-3xl font-semibold uppercase text-center">BẢNG GIÁ VÀ QUY ĐỊNH VỀ KÝ GỬI HÀNG TẠI NHẬP HÀNG NHANH</h2>
+            <div class="flex flex-wrap">
+                <div class="w-9/12">
+                    <p class="font-semibold">Chúng tôi chỉ nhận những hàng ký gửi khi khách hàng đã tạo đơn hàng ký gửi trên hệ thống NhapHangNhanh.com Quý khách vui lòng kê khai đúng loại mặt hàng, mã vận đơn, số kiện hàng ký gửi cùng giá trị lô hàng.</p>
+                    <p class="font-semibold italic">(Để tránh tổn thất cho chính Quý khách hàng, Quý khách vui lòng đọc và hiểu hết Quy Định của công ty!)
+                        Hướng dẫn lên đơn hàng ký gửi trên hệ thống NhapHangNhanh.com</p>
+                        
+                    <p class="font-semibold">Bảng giá áp dụng cho hàng ký gửi tại kho NhapHangNhanh:</p>
+                    <img src="img/nhaphangnhanh.jpg" />
+                    <p class="text-red-500">Lưu ý: Kg cân nặng đầu tiên nếu nhỏ hơn 1kg sẽ được làm tròn là 1 kg. Ví dụ: 0,5kg, 0,6kg, 0,8kg sẽ được làm tròn là 1kg. Trên 1kg sẽ giữ nguyên mức lẻ. VD: 1,6kg sẽ tính đúng là 1,6kg.</p>
+                    <p>Do yêu cầu về luật pháp & bảo quản hàng hóa nên NhapHangNhanh không nhận đặt hàng cũng như vận chuyển các mặt hàng sau:</p>
+                    <p class="font-semibold">BẢNG 1:</p>
+                    <div class="px-2 py-16 border border-1 border-gray-200">
+                        <table>
+                            <tr>
+                                <td><p class="py-1">1. Vũ khí, đạn dược, vật liệu nổ, trang thiết bị kỹ thuật quân sự(súng , đạn, đao , kiếm , dao kéo, ống ngắm,….)</p>
+                                    <p class="py-1">2. Pháo các loại, đèn trời, các loại thiết bị gây nhiễu máy đo tốc độ phương tiện giao thông.</p>
+                                    <p class="py-1">3. Các chất ma túy và chất kích thích thần kinh.</p>
+                                    <p class="py-1">4. Các sản phẩm dạngbột.</p>
+                                    <p class="py-1">5. Các mặt hàng thực phẩm.</p>
+                                    <p class="py-1">6. Dược phẩm, mỹ phẩm.</p>
+                                    <p class="py-1">7. Hàng giả, hàng nhái. (Kể cả hàngchính hãng của Nike, Adidas).</p>
+                                    <p class="py-1">8. Sinh vật sống.</p>
+                                    <p class="py-1">9. Các loại xuất bản phẩm cấm phổ biến và lưu hành tại Việt Nam:</p>
+                                    <p class="py-1">– Tem bưu chính thuộc diện cấm kinh doanh, trao đổi, trưng bày, tuyên truyền theo quy định của Luật Bưu chính.</p>
+                                    <p class="py-1">– Thiết bị vô tuyến điện, thiết bị ứng dụng sóng vô tuyến điện không phù hợp với các quy hoạch tần số vô tuyến điện và quy chuẩn kỹ thuật có liên quan theo quy định của Luật Tần số vô tuyến điện.</p>
+                                    <p class="py-1">10. Các loại văn hóa phẩm thuộc diện cấm phổ biến và lưu hành hoặc đã có quyết định đình chỉ phổ biến và lưu hành tại Việt Nam.</p>
+                                    <p class="py-1">11. a) Phương tiện vận tải tay lái bên phải (kể cả dạng tháo rời và dạng đã được chuyển đổi tay lái trước khi nhập khẩu vào Việt Nam), trừ các loại phương tiện chuyên dùng có tay lái bên phải hoạt động trong phạm vi hẹp và không tham gia giao thông gồm: xe cần cẩu; máy đào kênh rãnh; xe quét đường, tưới đường; xe chở rác và chất thải sinh hoạt; xe thi công mặt đường; xe chở khách trong sân bay; xe nâng hàng trong kho, cảng; xe bơm bê tông; xe chỉ di chuyển trong sân golf, công viên.</p>
+                                    <p class="py-1">b) Các loại ô tô và bộ linh kiện lắp ráp ô tô bị tẩy xóa, đục sửa, đóng lại số khung, số động cơ.</p>
+                                    <p class="py-1">c) Các loại mô tô, xe máy chuyên dùng, xe gắn máy bị tẩy xóa, đục sửa, đóng lại số khung, số động cơ.</p>
+                                    <p class="py-1">12. Vật tư, phương tiện đã qua sử dụng, gồm:</p>
+                                    <p class="py-1">a) Máy, khung, săm, lốp, phụ tùng, động cơ của ô tô, máy kéo và xe gắn máy.</p>
+                                    <p class="py-1">b) Khung gầm của ô tô, máy kéo có gắn động cơ (kể cả khung gầm mới có gắn động cơ đã qua sử dụng và hoặc khung gầm đã qua sử dụng có gắn động cơ mới).</p>
+                                    <p class="py-1">c) Ô tô các loại đã thay đổi kết cấu để chuyển đổi công năng so với thiết kế ban đầu hoặc bị tẩy xóa, đục sửa, đóng lại số khung, số động cơ.</p>
+                                    <p class="py-1">d) Ô tô cứu thương.</p>
+                                    <p class="py-1">đ) Xe đạp.</p>
+                                    <p class="py-1">e) Mô tô, xe gắn máy.</p>
+                                    <p class="py-1">13. Hóa chất độc, thuốc bảo vệ thực vật và hóa chất trong Phụ lục III Công ước Rotterdam.</p>
+                                    <p class="py-1">14. Các loại văn hóa phẩm đồi trụy, phản động, Vật phẩm, ấn phẩm, tài liệu nhằm phá hoại trật tự công cộng chống lại Nhà nước Cộng hòa Xã hội Chủ nghĩa Việt Nam.</p>
+                                    <p class="py-1">15. Hàng tiêu dùng đã qua sử dụng, bao gồm các nhóm hàng:</p>
+                                    <p class="py-1">– Hàng dệt may, giày dép, quần áo.</p>
+                                    <p class="py-1">– Hàng điện tử.</p>
+                                    <p class="py-1">– Hàng điện lạnh.</p>
+                                    <p class="py-1">– Hàng điện gia dụng.</p>
+                                    <p class="py-1">– Thiết bị y tế.</p>
+                                    <p class="py-1">– Hàng trang trí nội thất.</p>
+                                    <p class="py-1">– Hàng gia dụng bằng gốm, sành sứ, thủy tinh, kim loại, nhựa, cao su, chất dẻo và các chất liệu khác.</p>
+                                    <p class="py-1">– Hàng hóa là sản phẩm công nghệ thông tin đã qua sử dụng.</p>
+                                    <p class="py-1">16. Phế liệu, phế thải, thiết bị làm lạnh sử dụng C.F.C.</p>
+                                    <p class="py-1">17. Sản phẩm, vật liệu có chứa amiăng thuộc nhóm amfibole.</p>
+                                    <p class="py-1">18. Các sản phẩm liên quan lưu trữ dữ liệu như điện thoại, laptop,…</p>
+                                    <p class="py-1">19. Chất lỏng và các sản phẩm dạng lỏng.</p></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="font-semibold">CHÍNH SÁCH GIẢI QUYẾT KHIẾU NẠI, BỒI THƯỜNG VỚI HÀNG KÝ GỬI:</p>
+                    <p>– Quý khách vui lòng không ký gửi hàng hóa cấm đặt/ cấm vận chuyển. Nếu quý khách cố tình ký gửi hàng hóa cấm theo BẢNG 1, NhapHangNhanh hoàn toàn không chịu trách nhiệm trong trường hợp mất mát hoặc bị cơ quan nhà nước thu giữ.</p>
+                    <p>– Do chúng tôi không trực tiếp giao dịch với nhà cung cấp của Quý khách, cũng không cung cấp dịch vụ kiểm hàng cho các đơn hàng ký gửi. Hàng hóa của Quý khách được Nhà cung cấp vận chuyển đến, chúng tôi chỉ nhận hàng theo số kiện Quý khách đã kê khai. Vì vậy chúng tôi sẽ không chịu trách nhiệm đối với tình trạng hư hỏng hàng hoá, tính chính xác của hàng hóa trước khi đến với kho của chúng tôi.</p>
+                    <p>– Nếu quý khách dùng&nbsp;<strong>dịch vụ&nbsp;bảo hiểm hàng hóa</strong>, trường hợp xảy ra mất hàng hóa do NhapHangNhanh hoặc do các yếu tố khách quan khác, chúng tôi sẽ <strong>bồi thường 50% giá trị hàng hóa</strong>&nbsp;mà các bạn kê khai.&nbsp;<strong>Phí bảo hiểm hàng hóa là 5%</strong>&nbsp;trên tổng giá trị đơn hàng. Chúng tôi khuyến khích khách hàng sử dụng thêm dịch vụ này, để giảm thiểu rủi ro tối đa.</p>
+                    <p><strong>Ví dụ:</strong> Đơn hàng của quý khách là 10.000.000đ. Nếu quý khách mua thêm phí bảo hiểm hàng hóa 5% (tức là 500.000đ), nếu xảy ra tình trạng thất lạc mất hàng hóa, hàng hóa hỏng, thì NhapHangNhanh sẽ đền bù 5.000.000đ.</p>
+                    <p>– Nếu quý khách&nbsp;<strong>không dùng dịch vụ bảo hiểm hàng hóa</strong>, trường hợp xảy ra mất hàng hóa, thất lạc hàng hóa do NhapHangNhanh hoặc các yếu tố khách quan khác, chúng tôi sẽ bồi thường cho Quý khách gấp <strong>3 lần số tiền vận chuyển của đơn hàng</strong>&nbsp;đó.</p>
+                    <p><em>Lưu ý</em>: NhapHangNhanh toàn quyền xác minh lại chính xác giá trị đơn hàng khi xảy ra tranh chấp. Nếu giá trị hàng hóa mà quý khách kê khai cao hơn giá trị thực tế, chúng tôi sẽ không chấp nhận đền bù thiệt hại.</p>
+                </div>
+                <div class="w-3/12 items-center text-center">
+                    <p>RECENT POSTS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed z-30 bottom-0 right-0 mr-6 mb-6">
+        <a id="back2Top" href="#" class="hidden text-white bg-red-800 bg-opacity-50">
+            <span class="hidden">Back to Top</span>
+            <svg xmlns="https://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24" class="h-10 w-10">
+                <path fill="currentColor" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.412" />
+            </svg>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
