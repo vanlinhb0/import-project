@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="assets/img/card.png">
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>Nhận dạng thẻ căn cước</title>
+</head>
+<body class="text-gray-800 antialiased bg-gray-900">
+    <nav class="bg-gray-900">
+        <div class="container mx-auto border-b border-white">
+          <div class="relative flex items-center justify-between h-16">
+            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex-shrink-0 flex items-center">
+                <img class="block lg:hidden h-16 w-auto" src="assets/img/card.png" alt="Workflow">
+                <img class="hidden lg:block h-16 w-auto" src="assets/img/card.png" alt="Workflow">
+                <p class="text-white font-semibold uppercase">Identity card</p>
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <a
+                class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                href="#"
+                ><i
+                  class="lg:text-gray-300 text-gray-500 fab fa-github text-lg leading-lg "
+                ></i
+                ><span class="lg:hidden inline-block ml-2">Star</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main class="container mx-auto">
+            <div class="flex flex-col justify-center items-center">
+                <span class="text-white font-semibold uppercase text-2xl py-4">Hệ thống nhận dạng thẻ căn cước</span>
+            </div>
+            <form action="/upload-image" method="POST" enctype="multipart/form-data"> 
+            <div class="flex w-full items-center justify-center my-4">
+                <label class="w-64 flex flex-col items-center px-4 py-2 bg-green-400 text-white rounded-lg shadow-lg tracking-wide uppercase border border-green-400 cursor-pointer hover:bg-white hover:text-green-400">
+                    <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                    </svg>
+                    <span class="mt-2 text-base leading-normal">Chọn ảnh</span>
+                    <input type='file' class="hidden" />
+                </label>
+                <button class="flex flex-col items-center px-4 py-6 bg-white hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center hover:bg-blue-600">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            </form>
+            <div class="flex flex-row w-full h-2/3">
+                <div class="w-5/12 flex justify-center items-center bg-gray-300 group block rounded-lg p-4 border border-gray-200">
+                    <img src="img/logo.png" src="{{url_for('static', filename='aligned_images/'+filename)}}" />
+                </div>
+                <div class="w-2/12 flex justify-center items-center"><span class="text-white text-8xl">>></span></div>
+                <div class="w-5/12 flex justify-center items-center bg-gray-300 group block rounded-lg p-4 border border-gray-200">
+                    <ul class="home-title list">
+                        <li>
+                            <b>ID:</b>
+                            <span>{{ id }}</span>
+                        </li>
+                        <li>
+                            <b>Họ tên:</b>
+                            <span>{{ full_name }}</span>
+                        </li>                        
+                        <li>
+                            <b>Ngày sinh:</b>
+                            <span>{{ date_of_birth }}</span>
+                        </li>                        
+                        <li>
+                            <b>Giới tính:</b>
+                            <span>{{ sex }}</span>
+                        </li>                        
+                        {% if dan_toc != "" %}
+                        <li>
+                            <b>Dân tộc:</b>
+                            <span>{{ dan_toc[0] }}</span>
+                        </li>                        
+                        {% endif %}
+                        {% if quoc_tich != "" %}
+                        <li>
+                            <b>Quốc tịch:</b>
+                            <span>{{ quoc_tich[0] }}</span>
+                        </li>
+                        {% endif %}
+                        <li>
+                            <b>Quê quán:</b>
+                            <span>{{ que_quan_0 }}</span>
+                        </li>
+                        {% if que_quan_1 != '' %}
+                        <li>
+                            <b></b>
+                            <span>{{ que_quan_1 }}</span>
+                        </li>
+                        {% endif %}
+                        <li>
+                            <b>Nơi thường trú:</b>
+                            <span>{{ noi_thuong_tru_0 }}</span>
+                        </li>
+                        {% if noi_thuong_tru_1 != '' %}
+                        <li>
+                            <b></b>
+                            <span>{{ noi_thuong_tru_1 }}</span>
+                        </li> 
+                        {% endif %}                       
+                        </ul>
+                </div>
+            </div>
+      </main>
+      <footer class="container mx-auto">
+        <div class="flex justify-center items-center h-16 border-t border-white mt-4">
+            <span class="text-white font-semibold">Copyright © 2020 AI by 
+                <a href="#" class="hover:text-blue-300">Luong Nguyen</a></span>
+        </div>
+      </footer>
+</body>
+</html>
